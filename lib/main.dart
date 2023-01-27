@@ -10,12 +10,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const LoginPage(),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LoginPage(),
     );
   }
 }
@@ -26,26 +23,24 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple,
+      backgroundColor: Colors.deepPurpleAccent,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               'Welcome',
               style: TextStyle(
-                  color: Colors.white70,
+                  color: Colors.yellow.shade100,
                   fontSize: 55,
-                  fontWeight: FontWeight.bold
-                  ),
+                  fontWeight: FontWeight.bold),
             ),
             const Text(
               'To LA Lakers Blog',
               style: TextStyle(
                   color: Colors.yellow,
                   fontSize: 35,
-                  fontWeight: FontWeight.bold
-                  ),
+                  fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 20.0,
@@ -62,10 +57,28 @@ class LoginPage extends StatelessWidget {
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow,
-                foregroundColor: Colors.purple,
-                minimumSize: const Size(200, 40),
+                foregroundColor: Colors.deepPurple,
+                elevation: 10,
+                minimumSize: const Size(200, 45),
+                side: const BorderSide(color: Colors.deepPurple, width: 2),
+                shape: const StadiumBorder(),
               ),
-              child: const Text('Login'),
+              child: const Text('Log in'),
+            ),
+            const SizedBox(
+              height: 5.0,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.yellow,
+                foregroundColor: Colors.deepPurple,
+                elevation: 10,
+                minimumSize: const Size(200, 45),
+                side: const BorderSide(color: Colors.deepPurple, width: 2),
+                shape: const StadiumBorder(),
+              ),
+              child: const Text('Register'),
             )
           ],
         ),
